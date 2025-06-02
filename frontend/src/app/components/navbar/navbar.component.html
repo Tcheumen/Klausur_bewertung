@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <i class="bi bi-book-half mb-3 logo"></i>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/'" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/module'" routerLinkActive="active">Modulverwaltung</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/threshold'" routerLinkActive="active">Schwellverwaltung</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/upload'" routerLinkActive="active">Noteverwaltung</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,86 @@
+<!-- Abschnitt zur Verwaltung der Module -->
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header text-white">
+      <h5><i class="fas fa-book"></i> Modulverwaltung</h5>
+    </div>
+    <div class="card-body">
+      <form #form="ngForm"  (ngSubmit)="saveModule(form)">
+        <div class="row g-2">
+          <!-- Modultitel -->
+          <div class="col-md-6">
+            <label for="moduleTitle" class="form-label">
+              <i class="fas fa-file-alt"></i> Modultitel:
+            </label>
+            <input type="text" class="form-control" id="moduleTitle" [(ngModel)]="moduleInfo.moduleTitle"
+              name="moduleTitle" #moduleTitle="ngModel" required />
+            <div *ngIf="moduleTitle.invalid && moduleTitle.touched" class="text-danger">
+              <i class="fas fa-exclamation-circle"></i> Der Modultitel ist erforderlich!
+            </div>
+          </div>
+
+          <!-- Modulnummer -->
+          <div class="col-md-6">
+            <label for="moduleNumber" class="form-label">
+              <i class="fas fa-hashtag"></i> Modulnummer:
+            </label>
+            <input type="text" class="form-control" id="moduleNumber" [(ngModel)]="moduleInfo.moduleNumber"
+              name="moduleNumber" #moduleNumber="ngModel" required />
+            <div *ngIf="moduleNumber.invalid && moduleNumber.touched" class="text-danger">
+              <i class="fas fa-exclamation-circle"></i> Die Modulnummer ist erforderlich!
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2 mt-3">
+          <!-- Prüfungsdatum -->
+          <div class="col-md-6">
+            <label for="examDate" class="form-label">
+              <i class="fas fa-calendar-alt"></i> Prüfungsdatum:
+            </label>
+            <input type="date" class="form-control" id="examDate" [(ngModel)]="moduleInfo.examDate" name="examDate"
+              #examDate="ngModel" required />
+            <div *ngIf="examDate.invalid && examDate.touched" class="text-danger">
+              <i class="fas fa-exclamation-circle"></i> Das Prüfungsdatum ist erforderlich!
+            </div>
+          </div>
+
+          <!-- Prüfer -->
+          <div class="col-md-6">
+            <label for="examiners" class="form-label">
+              <i class="fas fa-user-tie"></i> Prüfer:
+            </label>
+            <input type="text" class="form-control" id="examiners" [ngModel]="(moduleInfo.examiners || []).join(', ')"
+              (ngModelChange)="moduleInfo.examiners = $event.split(',')" name="examiners" #examiners="ngModel"
+              required />
+            <div *ngIf="examiners.invalid && examiners.touched" class="text-danger">
+              <i class="fas fa-exclamation-circle"></i> Der Prüfername ist erforderlich!
+            </div>
+          </div>
+        </div>
+
+        <!-- Speichern-Button -->
+        <button type="submit" class="btn btn-success mt-3">
+          <i class="fas fa-save"></i> {{ isEditing ? 'Aktualisieren' : 'Speichern' }} des Moduls
+        </button>
+
+        <p *ngIf="errorMessage" class="alert alert-danger mt-2">
+          <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+        </p>
+
+
+        <!-- Bestätigungsnachricht -->
+        <p *ngIf="saveMessage" class="alert alert-success mt-2">
+          <i class="fas fa-check-circle"></i> {{ saveMessage }}
+        </p>
+      </form>
+    </div>
+
+    <!-- Weiter-Button -->
+    <div class="card-footer text-end">
+      <button class="btn btn-primary" (click)="navigateToNext()" [disabled]="!isSaved">
+        Weiter <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,171 @@
+<!-- Abschnitt für den Dateiimport -->
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header text-white">
+      <h5><i class="fas fa-file-upload"></i> CSV-Datei importieren</h5>
+    </div>
+    <div class="card-body">
+      <div class="input-group">
+        <input type="file" id="csvFile" class="form-control" (change)="onFileSelected($event)" />
+        <button class="btn btn-primary" (click)="uploadFile()" [disabled]="!file">
+          <i class="fas fa-cloud-upload-alt"></i> Hochladen
+        </button>
+      </div>
+      <p *ngIf="saveMessage" class="alert alert-success mt-2">
+        <i class="fas fa-check-circle"></i> {{ saveMessage }}
+      </p>
+      <p *ngIf="fileError" class="alert alert-danger mt-2">
+        <i class="fas fa-exclamation-circle"></i> {{ fileError }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Abschnitt für die Übungen -->
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header text-white">
+      <h5><i class="fas fa-tasks"></i> Übungen verwalten</h5>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center gap-2">
+        <input type="text" class="form-control w-50" [(ngModel)]="newTask" placeholder="Aufgabename"
+          [class.is-invalid]="taskError && !newTask" />
+        <input type="number" class="form-control w-25" [(ngModel)]="newTaskWeight" placeholder="Gewichtung"
+          [class.is-invalid]="taskError && (!newTaskWeight || newTaskWeight <= 0)" />
+        <button class="btn btn-success" (click)="addTask()" [disabled]="!isFileUploaded">
+          <i class="fas fa-plus-circle"></i> Hinzufügen
+        </button>
+      </div>
+
+      <!-- Message d'erreur -->
+      <p *ngIf="taskError" class="alert alert-danger mt-2">
+        <i class="fas fa-exclamation-circle"></i> {{ taskError }}
+      </p>
+
+      <!-- Message de succès -->
+      <p *ngIf="taskMessage" class="alert alert-success mt-2">
+        <i class="fas fa-check-circle"></i> {{ taskMessage }}
+      </p>
+
+
+      <table class="table table-bordered mt-3" *ngIf="tasks.length > 0">
+        <thead class="table-warning">
+          <tr>
+            <th><i class="fas fa-tasks"></i> Aufgabe</th>
+            <th><i class="fas fa-balance-scale"></i> Gewichtung</th>
+            <th><i class="fas fa-tools"></i> Aktionen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>{{ task }}</td>
+            <td>{{ taskWeights[task] || 'Nicht definiert' }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="removeTask(task)">
+                <i class="fas fa-trash"></i> Löschen
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Tabelle der Studierenden und Punktzahlen -->
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header text-white">
+      <h5><i class="fas fa-users"></i> Studierendenliste</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="table-warning">
+          <tr>
+            <th><i class="fas fa-id-badge"></i> Matrikelnummer</th>
+            <th><i class="fas fa-user"></i> Nachname</th>
+            <th><i class="fas fa-user"></i> Vorname</th>
+            <th><i class="fas fa-question-circle"></i> Pversuch</th>
+            <th><i class="fas fa-info-circle"></i> Pvermerk</th>
+            <th><i class="fas fa-school"></i> Raum</th>
+            <th *ngFor="let task of tasks"><i class="fas fa-tasks"></i> {{ task }}</th>
+            <th><i class="fas fa-calculator"></i> Gesamt</th>
+            <th><i class="fas fa-star"></i> Bewertung</th>
+            <th><i class="fas fa-sticky-note"></i> Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <td>{{ student.mtknr }}</td>
+            <td>{{ student.nachname }}</td>
+            <td>{{ student.vorname }}</td>
+            <td>{{ student.pversuch }}</td>
+            <td>{{ student.pvermerk }}</td>
+            <td>{{ student.sitzplatz }}</td>
+            <td *ngFor="let task of tasks">
+              <input type="number" class="form-control" [(ngModel)]="student.scores[task]"
+                (change)="updateScore(student, task, student.scores[task])" [min]="0" [max]="taskWeights[task]" />
+              <p *ngIf="scoreErrors[student.mtknr] && scoreErrors[student.mtknr][task]" class="text-danger small">
+                <i class="fas fa-exclamation-triangle"></i> {{ scoreErrors[student.mtknr][task] }}
+              </p>
+            </td>
+            <td>{{ student.total || 0 }}</td>
+            <td>{{ student.bewertung }}</td>
+            <td>{{ student.note }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Abschnitt für Aktionen -->
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header text-white">
+      <h5><i class="fas fa-cogs"></i> Aktionen</h5>
+    </div>
+    <div class="card-body text-center">
+      <div class="d-flex justify-content-center flex-wrap gap-2">
+        <!-- Zurück-Button -->
+        <button class="btn btn-primary btn-lg px-4 py-2 d-flex align-items-center gap-2" (click)="navigateToPrevious()">
+          <i class="fas fa-arrow-left"></i> Zurück
+        </button>
+
+        <!-- Speichern-Button -->
+        <button class="btn btn-success btn-lg px-4 py-2 d-flex align-items-center gap-2" (click)="saveData()"
+          [disabled]="!isFileUploaded">
+          <i class="fas fa-save"></i> Speichern
+        </button>
+
+         <!-- CSV-Export -->
+         <app-csv-export (exportCsvClicked)="exportCSV()" [disabled]="!isSaved">
+           <i class="fas fa-file-csv"></i>
+         </app-csv-export>
+
+           <!-- Excel-Export -->
+           <app-export-excel (exportClicked)="exportEXcel()" [disabled]="!isSaved">
+             <i class="fas fa-file-excel"></i>
+           </app-export-excel>
+
+             <!-- PDF-Export -->
+             <app-pdf-export (exportPdfClicked)="exportPdf()" [disabled]="!isSaved">
+               <i class="fas fa-file-pdf"></i>
+             </app-pdf-export>
+      
+
+        <!-- Beenden-Button -->
+        <button class="btn btn-dark btn-lg px-4 py-2 d-flex align-items-center gap-2" (click)="navigateToStart()"
+          [disabled]="!isSaved">
+          <i class="fas fa-flag-checkered"></i> Beenden
+        </button>
+      </div>
+
+      <!-- Speicherbestätigung -->
+      <p *ngIf="saveMessage" class="alert alert-success mt-3">
+        <i class="fas fa-check-circle"></i> {{ saveMessage }}
+      </p>
+    </div>
+  </div>
+</div>
