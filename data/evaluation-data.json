@@ -1,0 +1,683 @@
+{
+  "students": [
+    {
+      "mtknr": "5923847",
+      "nachname": "Müller",
+      "vorname": "Max",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 4,
+        "Auf2": 10,
+        "Auf3": 12.5,
+        "Auf4": 11
+      },
+      "total": 37.5,
+      "bewertung": 55,
+      "note": "3,7"
+    },
+    {
+      "mtknr": "5762983",
+      "nachname": "Schmidt",
+      "vorname": "Paul",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 5,
+        "Auf2": 22,
+        "Auf3": 12.5,
+        "Auf4": 17.5
+      },
+      "total": 57,
+      "bewertung": 80,
+      "note": "2,0"
+    },
+    {
+      "mtknr": "5847123",
+      "nachname": "Schneider",
+      "vorname": "Alexander",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 3,
+        "Auf2": 9,
+        "Auf3": 9,
+        "Auf4": 1
+      },
+      "total": 22,
+      "bewertung": 32,
+      "note": "n.b"
+    },
+    {
+      "mtknr": "5983746",
+      "nachname": "Fischer",
+      "vorname": "Lukas",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 2,
+        "Auf2": 2,
+        "Auf3": 3.5,
+        "Auf4": 0
+      },
+      "total": 7.5,
+      "bewertung": 11,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5938174",
+      "nachname": "Weber",
+      "vorname": "Leon",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 8,
+        "Auf2": 16,
+        "Auf3": 17,
+        "Auf4": 24.5
+      },
+      "total": 65.5,
+      "bewertung": 92,
+      "note": "1,3"
+    },
+    {
+      "mtknr": "5792834",
+      "nachname": "Meyer",
+      "vorname": "Jonas",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 4,
+        "Auf2": 19,
+        "Auf3": 8,
+        "Auf4": 28.5
+      },
+      "total": 59.5,
+      "bewertung": 83,
+      "note": "2,0"
+    },
+    {
+      "mtknr": "5817236",
+      "nachname": "Wagner",
+      "vorname": "Felix",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 0,
+        "Auf2": 6,
+        "Auf3": 7.5,
+        "Auf4": 1
+      },
+      "total": 14.5,
+      "bewertung": 21,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5871934",
+      "nachname": "Becker",
+      "vorname": "Liam",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5918273",
+      "nachname": "Schulz",
+      "vorname": "Noah",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5761234",
+      "nachname": "Hoffmann",
+      "vorname": "Elias",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 0,
+        "Auf2": 1,
+        "Auf3": 0,
+        "Auf4": 0
+      },
+      "total": 1,
+      "bewertung": 1,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5938472",
+      "nachname": "Koch",
+      "vorname": "Finn",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Auf1": 7,
+        "Auf2": 11,
+        "Auf3": 16,
+        "Auf4": 17
+      },
+      "total": 51,
+      "bewertung": 75,
+      "note": "2,3"
+    },
+    {
+      "mtknr": "5847623",
+      "nachname": "Bauer",
+      "vorname": "Julian",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5771928",
+      "nachname": "Richter",
+      "vorname": "Tim",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5912347",
+      "nachname": "Klein",
+      "vorname": "Tom",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5867293",
+      "nachname": "Wolf",
+      "vorname": "Milan",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5793846",
+      "nachname": "Schröder",
+      "vorname": "David",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5938712",
+      "nachname": "Neumann",
+      "vorname": "Emil",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5849273",
+      "nachname": "Schwarz",
+      "vorname": "Ben",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5782634",
+      "nachname": "Zimmermann",
+      "vorname": "Mia",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5958172",
+      "nachname": "Braun",
+      "vorname": "Emma",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5891346",
+      "nachname": "Krüger",
+      "vorname": "Sophia",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5738294",
+      "nachname": "Hofmann",
+      "vorname": "Hannah",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5849372",
+      "nachname": "Hartmann",
+      "vorname": "Lea",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5791823",
+      "nachname": "Lange",
+      "vorname": "Anna",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5982734",
+      "nachname": "Schmitt",
+      "vorname": "Marie",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5937412",
+      "nachname": "Werner",
+      "vorname": "Lina",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5861923",
+      "nachname": "Schmitz",
+      "vorname": "Emilia",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5772938",
+      "nachname": "Krause",
+      "vorname": "Lara",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5918723",
+      "nachname": "Meier",
+      "vorname": "Clara",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5791284",
+      "nachname": "Lehmann",
+      "vorname": "Nina",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5847913",
+      "nachname": "Schmid",
+      "vorname": "Ella",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5982739",
+      "nachname": "Schulze",
+      "vorname": "Greta",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5931287",
+      "nachname": "Maier",
+      "vorname": "Lara",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5773492",
+      "nachname": "Köhler",
+      "vorname": "Melina",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5894713",
+      "nachname": "Herrmann",
+      "vorname": "Sarah",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5917824",
+      "nachname": "König",
+      "vorname": "Laura",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5763829",
+      "nachname": "Walter",
+      "vorname": "Julia",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5849712",
+      "nachname": "Mayer",
+      "vorname": "Tobias",
+      "pversuch": "2",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5932871",
+      "nachname": "Huber",
+      "vorname": "Erik",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5981723",
+      "nachname": "Kaiser",
+      "vorname": "Simon",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5794638",
+      "nachname": "Fuchs",
+      "vorname": "Samuel",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5912378",
+      "nachname": "Peters",
+      "vorname": "Moritz",
+      "pversuch": "2",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5847391",
+      "nachname": "Lang",
+      "vorname": "Nico",
+      "pversuch": "2",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5761923",
+      "nachname": "Scholz",
+      "vorname": "Jan",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5937812",
+      "nachname": "Möller",
+      "vorname": "Ahmet",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5982731",
+      "nachname": "Ibrahim",
+      "vorname": "Mehmet",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5871938",
+      "nachname": "Nguyen",
+      "vorname": "Fatma",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5918274",
+      "nachname": "Öztürk",
+      "vorname": "Aylin",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5791382",
+      "nachname": "Ali",
+      "vorname": "Leyla",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    },
+    {
+      "mtknr": "5489654",
+      "nachname": "Kaya",
+      "vorname": "Nguyen",
+      "pversuch": "2",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {},
+      "total": 0,
+      "bewertung": null,
+      "note": ""
+    }
+  ],
+  "tasks": [
+    "Auf1",
+    "Auf2",
+    "Auf3",
+    "Auf4"
+  ],
+  "taskWeights": {
+    "Auf1": 9,
+    "Auf2": 25,
+    "Auf3": 17,
+    "Auf4": 32
+  },
+  "thresholds": [
+    {
+      "points": 0,
+      "percentage": 0,
+      "note": 0
+    },
+    {
+      "points": 34,
+      "percentage": 50,
+      "note": 4
+    },
+    {
+      "points": 68,
+      "percentage": 95,
+      "note": 1.3
+    },
+    {
+      "points": 77,
+      "percentage": 100,
+      "note": 1
+    }
+  ]
+}
