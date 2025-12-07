@@ -2,9 +2,9 @@ name: CI - E2E Angular + Electron (Playwright & Cypress)
 
 on:
   push:
-    branches: [master, main, develop, ci-test]
+    branches: [ master, main, develop, ci-test ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ master, main, develop ]
 
 jobs:
   playwright-e2e:
@@ -20,32 +20,42 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      # Dépendances à la racine (Playwright, Cypress, Electron, etc.)
       - name: Install root dependencies
         run: npm ci
 
+      # Dépendances Angular dans le dossier frontend
       - name: Install Angular frontend dependencies
         working-directory: ./frontend
         run: npm ci
 
+      # Build Angular (utilise le script "build" de frontend/package.json)
       - name: Build Angular app
         working-directory: ./frontend
         run: npm run build -- --base-href ./
 
-
+      # Install Playwright browsers
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright Electron tests only
-        run: npx playwright test --project=electron
+      # Installer Xvfb pour fournir un serveur X virtuel à Electron
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      # Lancer uniquement les tests Playwright du projet "electron" sous Xvfb
+      - name: Run Playwright Electron tests
+        run: xvfb-run --auto-servernum -- npx playwright test --project=electron
         env:
           CI: true
 
+      # Uploader le rapport HTML Playwright (si généré)
       - name: Upload Playwright HTML report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report
+          if-no-files-found: ignore
 
   cypress-e2e:
     runs-on: ubuntu-latest
@@ -68,22 +78,26 @@ jobs:
         working-directory: ./frontend
         run: npm ci
 
+      # Démarrer le serveur Angular pour Cypress (ng serve)
       - name: Start Angular dev server
         working-directory: ./frontend
         run: npm run start -- --host 0.0.0.0 --port 4200 &
-
-
+      
+      # Attendre que l'app soit dispo sur http://localhost:4200
       - name: Wait for Angular dev server
         run: npx wait-on http://localhost:4200
 
+      # Installer le binaire Cypress
       - name: Install Cypress binary
         run: npx cypress install
 
+      # Lancer les tests Cypress (script "cypress:run" de package.json)
       - name: Run Cypress tests
         run: npm run cypress:run
         env:
           CI: true
 
+      # Uploader les artefacts Cypress (screenshots, vidéos, résultats)
       - name: Upload Cypress artifacts
         if: always()
         uses: actions/upload-artifact@v4
