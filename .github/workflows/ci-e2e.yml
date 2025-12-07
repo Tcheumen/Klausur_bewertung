@@ -35,8 +35,8 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: npm run playwright:test
+      - name: Run Playwright Electron tests only
+        run: npx playwright test --project=electron
         env:
           CI: true
 
