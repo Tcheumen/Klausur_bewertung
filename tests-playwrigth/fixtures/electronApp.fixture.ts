@@ -23,7 +23,11 @@ export const test = base.extend<ElectronFixtures>({
         const csvExportPath = join(testDataDir, 'exam-data-export.csv');
 
         const app = await electron.launch({
-            args: ['.'],
+            args: [
+                '.',
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+            ],
             env: {
                 ...process.env,
                 E2E_PDF_PATH: pdfPath,        
