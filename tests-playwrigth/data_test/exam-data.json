@@ -1,0 +1,106 @@
+{
+  "students": [
+    {
+      "mtknr": "5923847",
+      "nachname": "Müller",
+      "vorname": "Max",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 10,
+        "Aufgabe 2": 11,
+        "Aufgabe 3": 19,
+        "Aufgabe 4": 11
+      },
+      "total": 51,
+      "bewertung": 75,
+      "note": "2,3"
+    },
+    {
+      "mtknr": "5762983",
+      "nachname": "Schmidt",
+      "vorname": "Paul",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 14,
+        "Aufgabe 2": 12,
+        "Aufgabe 3": 11,
+        "Aufgabe 4": 4
+      },
+      "total": 41,
+      "bewertung": "2",
+      "note": "3,3"
+    },
+    {
+      "mtknr": "5847123",
+      "nachname": "Schneider",
+      "vorname": "Alexander",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 18,
+        "Aufgabe 2": 13,
+        "Aufgabe 3": 3,
+        "Aufgabe 4": 23
+      },
+      "total": 57,
+      "bewertung": 80,
+      "note": "2,0"
+    },
+    {
+      "mtknr": "5983746",
+      "nachname": "Fischer",
+      "vorname": "Lukas",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 22,
+        "Aufgabe 2": 14,
+        "Aufgabe 3": 16,
+        "Aufgabe 4": 16
+      },
+      "total": 68,
+      "bewertung": 95,
+      "note": "1,0"
+    },
+    {
+      "mtknr": "5938174",
+      "nachname": "Weber",
+      "vorname": "Leon",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 26,
+        "Aufgabe 2": 15,
+        "Aufgabe 3": 8,
+        "Aufgabe 4": 9
+      },
+      "total": 58,
+      "bewertung": 81,
+      "note": "2,0"
+    },
+    {
+      "mtknr": "5792834",
+      "nachname": "Meyer",
+      "vorname": "Jonas",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 30,
+        "Aufgabe 2": 0,
+        "Aufgabe 3": 0,
+        "Aufgabe 4": 2
+      },
+      "total": 32,
+      "bewertung": 47,
+      "note": "n.b"
+    }
+  ]
+}

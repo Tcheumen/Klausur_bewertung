@@ -12,7 +12,7 @@ import { ExportService } from '../../services/export_file/export.service';
 export class CsvExportComponent {
  
   saveMessage: string = '';
-  @Input() disabled: boolean = false;
+  @Input() disabled: boolean = true;
   @Output() exportCsvClicked = new EventEmitter<void>();
  
 
@@ -43,7 +43,8 @@ export class CsvExportComponent {
 
   
   onButtonCsvClicked(): void {
-    console.log('🧨 onButtonCsvClicked() déclenché'); // 👈
+    console.log('🧨 onButtonCsvClicked() déclenché');
+    if (this.disabled) return;                 // 👉 évite d’émettre si disabled
     this.exportCsvClicked.emit();
   }
 

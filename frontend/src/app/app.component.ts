@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ExportService } from './services/export_file/export.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'frontend';
+  
+  constructor(public exportService: ExportService) { }
 }

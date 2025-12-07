@@ -13,7 +13,7 @@ export class PdfExportComponent {
 
 
   saveMessage: string = '';
-  @Input() disabled: boolean = false;
+  @Input() disabled: boolean = true;
   @Output() exportPdfClicked = new EventEmitter<void>();
 
   constructor(private exportService: ExportService) { }
@@ -33,10 +33,12 @@ export class PdfExportComponent {
     });
   }
 
-    onPdfButtonClick(): void {
-      console.log('🧨 onPdfButtonClick déclenché');
-      this.exportPdfClicked.emit();
-    }
 
+  
+  onPdfButtonClick(): void {
+    console.log('🧨 onButtonCsvClicked() déclenché');
+    if (this.disabled) return;                 // 👉 évite d’émettre si disabled
+    this.exportPdfClicked.emit();
+  }
   }
 

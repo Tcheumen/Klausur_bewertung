@@ -14,7 +14,7 @@ export class ExportExcelComponent {
   constructor(private exporService: ExportService){}
 
   saveMessage: string = '';
-  @Input() disabled: boolean = false;
+  @Input() disabled: boolean = true;
   @Output() exportClicked = new EventEmitter<void>();
 
   downloadExcelData(): void {
@@ -38,9 +38,9 @@ export class ExportExcelComponent {
 
 
   onButtonClick(): void {
-    console.log('🧨 onButtonExcellClicked() déclenché'); // 👈
+    console.log('🧨 onButtonCsvClicked() déclenché');
+    if (this.disabled) return;                 // 👉 évite d’émettre si disabled
     this.exportClicked.emit();
   }
-
 
 }

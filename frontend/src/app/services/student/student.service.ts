@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Student } from '../../models/student';
 import { Threshold } from '../../models/threshold';
 import { getBewertung, getNote } from '../../utils/evaluation';
@@ -8,7 +8,7 @@ import { getBewertung, getNote } from '../../utils/evaluation';
 })
 export class StudentService {
 
-  constructor() { }
+  constructor(private ngZone: NgZone) { }
 
   // Préparation d'un étudiant après l'import CSV
   prepareStudent(data: Student): Student {
@@ -45,14 +45,45 @@ export class StudentService {
   }
 
   // Sauvegarde globale
-  saveEvaluationData(data: any, onSuccess: () => void, onError?: (error: any) => void): void {
-    (window as any).electronAPI.send('save-evaluation-data', data);
+ saveEvaluationData(
+  data: any,
+  onSuccess: () => void,
+  onError?: (error: any) => void
+): void {
+  const electron = (window as any).electronAPI;
 
-    (window as any).electronAPI.receive('evaluation-saved', onSuccess);
-
-    if (onError) {
-      (window as any).electronAPI.receive('evaluation-save-error', onError);
-    }
+  // 🌐 Fallback : pas d'Electron → on simule un succès immédiat
+  if (!electron || typeof electron.send !== 'function' || typeof electron.receive !== 'function') {
+    this.ngZone.run(() => onSuccess());
+    return;
   }
+
+  // Contexte Electron normal
+  electron.send('save-evaluation-data', data);
+
+  // Gestionnaires
+  const successHandler = () => {
+    this.ngZone.run(() => onSuccess());
+    // Optionnel : nettoyer les listeners si ton preload expose removeListener
+    electron.removeListener?.('evaluation-saved', successHandler);
+    if (onError && electron.removeListener) {
+      electron.removeListener('evaluation-save-error', errorHandler);
+    }
+  };
+
+  const errorHandler = (error: any) => {
+    if (!onError) { return; }
+    this.ngZone.run(() => onError(error));
+    electron.removeListener?.('evaluation-save-error', errorHandler);
+    electron.removeListener?.('evaluation-saved', successHandler);
+  };
+
+  electron.receive('evaluation-saved', successHandler);
+
+  if (onError) {
+    electron.receive('evaluation-save-error', errorHandler);
+  }
+}
+
 
 }

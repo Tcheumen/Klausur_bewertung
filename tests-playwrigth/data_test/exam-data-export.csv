@@ -1,0 +1,10 @@
+ÿModule Title;Module Number;Prüfungsdatum;Prüfer;Exportdatum
+Mathematik I;MATH-101;2025-12-24;Dr. Müller;7.12.2025
+
+MatrikelNr;Nachname;Vorname;Pversuch;Pvermerk;Sitzplatz;Aufgabe 1;Aufgabe 2;Aufgabe 3;Aufgabe 4;Gesamt;Bewertung;Note
+5923847;Müller;Max;1;;;10;11;19;11;51;75;2,3
+5762983;Schmidt;Paul;1;;;14;12;11;4;41;60;3,3
+5847123;Schneider;Alexander;1;;;18;13;3;23;57;80;2,0
+5983746;Fischer;Lukas;1;;;22;14;16;16;68;95;1,0
+5938174;Weber;Leon;1;;;26;15;8;9;58;81;2,0
+5792834;Meyer;Jonas;1;;;30;0;0;2;32;47;n.b

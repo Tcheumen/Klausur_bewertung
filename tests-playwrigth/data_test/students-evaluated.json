@@ -1,0 +1,88 @@
+{
+  "students": [
+    {
+      "mtknr": "5923847",
+      "nachname": "Müller",
+      "vorname": "Max",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 7
+      },
+      "total": 7,
+      "bewertung": 0,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5762983",
+      "nachname": "Schmidt",
+      "vorname": "Paul",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 9
+      },
+      "total": 9,
+      "bewertung": 0,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5847123",
+      "nachname": "Schneider",
+      "vorname": "Alexander",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 6
+      },
+      "total": 6,
+      "bewertung": 0,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5983746",
+      "nachname": "Fischer",
+      "vorname": "Lukas",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 9
+      },
+      "total": 9,
+      "bewertung": 0,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5938174",
+      "nachname": "Weber",
+      "vorname": "Leon",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 7
+      },
+      "total": 7,
+      "bewertung": 0,
+      "note": "g.n.b"
+    },
+    {
+      "mtknr": "5792834",
+      "nachname": "Meyer",
+      "vorname": "Jonas",
+      "pversuch": "1",
+      "pvermerk": "",
+      "sitzplatz": "",
+      "scores": {
+        "Aufgabe 1": 7
+      },
+      "total": 9,
+      "bewertung": 0,
+      "note": "g.n.b"
+    }
+  ]
+}

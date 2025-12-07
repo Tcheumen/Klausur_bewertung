@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "name": "Aufgabe 1",
+      "weight": 30
+    },
+    {
+      "name": "Aufgabe 2",
+      "weight": 15
+    },
+    {
+      "name": "Aufgabe 3",
+      "weight": 20
+    },
+    {
+      "name": "Aufgabe 4",
+      "weight": 25
+    }
+  ],
+  "expectedStudentCount": 6
+}

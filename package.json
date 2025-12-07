@@ -6,19 +6,31 @@
   "scripts": {
     "start:angular": "cd frontend && ng serve",
     "build:angular": "cd frontend && ng build --base-href ./",
-    "start:electron": "npm run build:angular && electron ."
+    "start:electron": "npm run build:angular && electron .",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "playwright:test": "playwright test",
+    "playwright:test:headed": "playwright test --headed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^35.1.4"
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/pdfjs-dist": "^2.10.378",
+    "cypress": "^15.7.0",
+    "electron": "^35.1.4",
+    "pdf-lib": "^1.17.1"
   },
   "dependencies": {
     "chart.js": "^4.4.8",
     "chartjs-node-canvas": "^5.0.0",
     "chartjs-plugin-datalabels": "^2.2.0",
     "electron-store": "^10.0.1",
+    "pdf2json": "^4.0.0",
+    "pdfjs-dist": "^5.4.449",
     "pdfkit": "^0.16.0",
     "xlsx": "^0.18.5"
   }
