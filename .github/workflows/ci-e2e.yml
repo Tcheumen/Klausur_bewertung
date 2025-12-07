@@ -2,7 +2,7 @@ name: CI - E2E Angular + Electron (Playwright & Cypress)
 
 on:
   push:
-    branches: [master, main, develop, test-ci ]
+    branches: [master, main, develop, ci-test]
   pull_request:
     branches: [ main, develop ]
 
