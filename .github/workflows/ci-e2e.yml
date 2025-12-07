@@ -2,7 +2,7 @@ name: CI - E2E Angular + Electron (Playwright & Cypress)
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, test-ci ]
   pull_request:
     branches: [ main, develop ]
 
@@ -20,30 +20,24 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      # 1) Dépendances à la racine (Playwright, Cypress, Electron, etc.)
       - name: Install root dependencies
         run: npm ci
 
-      # 2) Dépendances Angular dans le dossier frontend
       - name: Install Angular frontend dependencies
         working-directory: ./frontend
         run: npm ci
 
-      # 3) Build Angular (nécessaire pour l'app Electron)
       - name: Build Angular app
         run: npm run build:angular
 
-      # 4) Installer les navigateurs Playwright
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      # 5) Lancer les tests Playwright (tous les projets: chromium, firefox, webkit, electron)
       - name: Run Playwright tests
         run: npm run playwright:test
         env:
           CI: true
 
-      # 6) Uploader le rapport HTML Playwright
       - name: Upload Playwright HTML report
         if: always()
         uses: actions/upload-artifact@v4
@@ -72,25 +66,20 @@ jobs:
         working-directory: ./frontend
         run: npm ci
 
-      # 1) Démarrer le serveur Angular pour Cypress (ng serve)
       - name: Start Angular dev server
         run: npm run start:angular &
-      
-      # 2) Attendre que l'app soit dispo sur http://localhost:4200
+
       - name: Wait for Angular dev server
         run: npx wait-on http://localhost:4200
 
-      # 3) Installer le binaire Cypress
       - name: Install Cypress binary
         run: npx cypress install
 
-      # 4) Lancer les tests Cypress
       - name: Run Cypress tests
         run: npm run cypress:run
         env:
           CI: true
 
-      # 5) Uploader les artefacts Cypress (si dossiers présents)
       - name: Upload Cypress artifacts
         if: always()
         uses: actions/upload-artifact@v4
