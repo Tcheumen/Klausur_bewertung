@@ -2,9 +2,20 @@ name: CI - E2E Angular + Electron (Playwright & Cypress)
 
 on:
   push:
-    branches: [ master, main, develop, ci-test ]
+    branches: [ master, develop, ci-test ]
   pull_request:
-    branches: [ master, main, develop ]
+    branches: [ master, develop ]
+
+# Permissions nécessaires pour GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Évite les déploiements concurrents de Pages
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   playwright-e2e:
@@ -82,7 +93,7 @@ jobs:
       - name: Start Angular dev server
         working-directory: ./frontend
         run: npm run start -- --host 0.0.0.0 --port 4200 &
-      
+
       # Attendre que l'app soit dispo sur http://localhost:4200
       - name: Wait for Angular dev server
         run: npx wait-on http://localhost:4200
@@ -108,3 +119,32 @@ jobs:
             cypress/videos
             cypress/results
           if-no-files-found: ignore
+
+  deploy-playwright-report:
+    runs-on: ubuntu-latest
+    needs: [playwright-e2e] # on déploie seulement après les tests Playwright
+    if: always()           # pour avoir le rapport même en cas d'échec des tests
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # Récupérer l'artefact HTML généré par le job playwright-e2e
+      - name: Download Playwright report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: ./playwright-report
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Playwright report to Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./playwright-report
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
